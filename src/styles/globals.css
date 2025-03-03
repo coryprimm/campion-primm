@@ -1,21 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Morganite:wght@400;700&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #000000;
+    --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
+}
+@font-face {
+    font-family: 'Minion Pro';
+    src: url('/fonts/MinionPro-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 
+@font-face {
+    font-family: 'Mrs Eaves';
+    src: url('/fonts/MrsEavesOT-Roman.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    color: var(--foreground);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+    font-family: var(--font-montserrat);
+}
+
+.body {
+    font-family: var(--font-libre-baskerville);
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
 }

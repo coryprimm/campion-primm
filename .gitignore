@@ -1,41 +1,100 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
-
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
+# System files
 .DS_Store
-*.pem
+Icon\105
 
-# debug
+# Build and output directories
+.next
+build
+dist
+coverage
+
+# Dependency directories
+node_modules
+jspm_packages/
+
+# Environment files
+.env
+.env.local
+.env.*
+*.env
+
+# Logs
+*.log
 npm-debug.log*
-yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# Editor files
+.vscode
+.idea
+*.swp
+*.swo
+.vimrc
 
-# vercel
-.vercel
+# Cache
+.cache
+*.cache
 
-# typescript
+# TypeScript
 *.tsbuildinfo
-next-env.d.ts
+
+# Minified files
+*.min.js
+*.min.css
+
+# Source maps
+*.map
+
+# Temporary files
+tmp
+
+# PWA files
+**/public/sw.js
+**/public/workbox-*.js
+**/public/worker-*.js
+**/public/sw.js.map
+**/public/workbox-*.js.map
+**/public/worker-*.js.map
+
+# Storybook
+storybook-static
+
+# Testing
+.nyc_output
+
+#Recommended from Facebook/Stackoverflow
+scripts/flow/*/.flowconfig
+.flowconfig
+*~
+*.pyc
+.grunt
+_SpecRunner.html
+__benchmarks__
+build/
+remote-repo/
+coverage/
+.module-cache
+fixtures/dom/public/react-dom.js
+fixtures/dom/public/react.js
+test/the-files-to-test.generated.js
+*.log*
+chrome-user-data
+*.sublime-project
+*.sublime-workspace
+*.iml
+
+packages/react-devtools-core/dist
+packages/react-devtools-extensions/chrome/build
+packages/react-devtools-extensions/chrome/*.crx
+packages/react-devtools-extensions/chrome/*.pem
+packages/react-devtools-extensions/firefox/build
+packages/react-devtools-extensions/firefox/*.xpi
+packages/react-devtools-extensions/firefox/*.pem
+packages/react-devtools-extensions/shared/build
+packages/react-devtools-extensions/.tempUserDataDir
+packages/react-devtools-fusebox/dist
+packages/react-devtools-inline/dist
+packages/react-devtools-shell/dist
+packages/react-devtools-timeline/dist
+
+
+
