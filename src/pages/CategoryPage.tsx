@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-// @ts-ignore
-import { VIVmagData } from '../data/VIVmagData';
-// @ts-ignore
-import SingleBoxes from '../components/SingleBoxes';
 import SinglePhotoTitleList from '@/components/general/SinglePhotoTitleList';
 import { Nav } from '../assets/mappings/imageMappings';
 // @ts-ignore
@@ -15,7 +11,6 @@ const CategoryPage: React.FC = () => {
         subcategory: string;
     }>();
 
-    const decodedCategory = category?.toUpperCase() || '';
     const decodedSubcategory = decodeURIComponent(subcategory || '');
 
     const [reducedData, setReducedData] = useState<
