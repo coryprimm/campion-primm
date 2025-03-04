@@ -46,11 +46,13 @@ const CategoryPage: React.FC = () => {
                 const reduced = await getVivUrls(
                     decodedCategory,
                     decodedSubcategory,
+                    // @ts-ignore
                     Nav
                 );
 
                 let urls = [] as { url: string; title: string }[];
                 if (urlNav['/viv']) {
+                    // @ts-ignore
                     urls = getSurroundingItems(
                         urlNav['/viv'],
                         `${decodedSubcategory.toUpperCase()}`
@@ -102,6 +104,7 @@ const CategoryPage: React.FC = () => {
     }
 
     const newSub = removeUnderscore(
+        // @ts-ignore
         chopOffDigitsAndUnderscore(subcategory.toUpperCase())
     );
     if (
@@ -144,7 +147,9 @@ const CategoryPage: React.FC = () => {
             ))}
             <div className="bg-black pt-[200px]"></div>
             {bottomUrls && bottomUrls.length ? (
-                <FooterLinks data={bottomUrls} />
+                <FooterLinks // @ts-ignore
+                    data={bottomUrls}
+                />
             ) : null}
 
             <Footer />

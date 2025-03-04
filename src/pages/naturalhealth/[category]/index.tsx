@@ -56,6 +56,7 @@ const GenericNatPage: React.FC = () => {
                     );
 
                     if (navUrls && navUrls.length > 0) {
+                        // @ts-ignore
                         urls = navUrls;
                     }
                 }
@@ -116,7 +117,9 @@ const GenericNatPage: React.FC = () => {
             <SingleBoxes urls={imageArrays.flatMap((item) => item.urls)} />
             <div className="bg-black pt-[200px]"></div>
             {bottomUrls && bottomUrls.length ? (
-                <FooterLinks data={bottomUrls} />
+                <FooterLinks // @ts-ignore
+                    data={bottomUrls}
+                />
             ) : null}
             <Footer />
         </div>

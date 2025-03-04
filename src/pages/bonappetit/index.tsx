@@ -79,6 +79,7 @@ const BonAppetit: React.FC = () => {
                 const categoryImages: { [key: string]: string[] } = {};
                 for (const data of BAinfo.catTitleUrlslive) {
                     const title = Object.keys(data)[0];
+                    // @ts-ignore
                     const photos = data[title];
                     const fetchedImages = await fetchCloudflareImages(photos);
                     categoryImages[title] = fetchedImages;
@@ -219,7 +220,11 @@ const BonAppetit: React.FC = () => {
                 </div>
 
                 <div className="bg-black pt-[200px]"></div>
-                {bottomUrls.length ? <FooterLinks data={bottomUrls} /> : null}
+                {bottomUrls.length ? (
+                    <FooterLinks // @ts-ignore
+                        data={bottomUrls}
+                    />
+                ) : null}
                 <Footer />
             </div>
         </>

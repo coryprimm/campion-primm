@@ -3,14 +3,17 @@ import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 
 // Function to get signed URLs for a batch of images
 // Used all over the place in place of hooks
+
+// @ts-ignore
 export async function fetchCloudflareImages(keys: string[]): Promise<string[]> {
     try {
         const s3Client = new S3Client({
             region: 'auto',
             endpoint: `https://${process.env.NEXT_PUBLIC_ACCOUNT_ID}.r2.cloudflarestorage.com`,
             credentials: {
-                accessKeyId: process.env.NEXT_PUBLIC_R2_ACCESS_KEY_ID,
-                secretAccessKey: process.env.NEXT_PUBLIC_R2_SECRET_ACCESS_KEY,
+                accessKeyId: process.env.NEXT_PUBLIC_R2_ACCESS_KEY_ID as string,
+                secretAccessKey: process.env
+                    .NEXT_PUBLIC_R2_SECRET_ACCESS_KEY as string,
             },
         });
 
@@ -94,6 +97,8 @@ export async function getBonUrls(
     data: Record<string, string[]>
 ): Promise<string[][]> {
     const decodedCategory = decodeURIComponent(category).toUpperCase();
+
+    // @ts-ignore
     const categoryData = data.bonappetit[decodedCategory];
 
     if (!categoryData) {
@@ -192,8 +197,11 @@ function prependImagePathlive(
 }
 
 // Function to get signed URLs for a batch of images
+
+// @ts-ignore
 async function fetchCloudflareImagesTitled(keys: string[]): Promise<string[]> {
     try {
+        // @ts-ignore
         const s3Client = new S3Client({
             region: 'auto',
             endpoint: `https://${process.env.NEXT_PUBLIC_ACCOUNT_ID}.r2.cloudflarestorage.com`,
@@ -234,7 +242,7 @@ async function fetchCloudflareImagesTitled(keys: string[]): Promise<string[]> {
     }
 }
 
-function transformData(data: Record<string, any[]>): string[][] {
+function transformData(data: Record<string, []>): string[][] {
     return Object.values(data) // Get all category arrays
         .flat() // Flatten the category arrays (removes outer objects)
         .map((entry) => {

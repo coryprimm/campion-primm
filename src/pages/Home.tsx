@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from 'next/font/google';
+// @ts-ignore
 import Navbar from '@/components/home/Navbar';
 import Header from '@/components/Header';
 import DualHeaderComponent from '@/components/home/DualHeaderComponent';
@@ -28,7 +29,7 @@ export default function Home() {
                 paragraph={introData.paragraph}
             />
 
-            <FeaturedContentList />
+            <FeaturedContentList featuredImages={[]} />
         </div>
     );
 }

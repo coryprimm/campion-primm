@@ -48,6 +48,7 @@ const TertiaryPage: React.FC = () => {
                         decodedCategory,
                         decodedSubcategory,
                         decodedTertiary,
+                        // @ts-ignore
                         Nav
                     );
 
@@ -82,6 +83,7 @@ const TertiaryPage: React.FC = () => {
                             'Successfully retrieved surrounding items URLs:',
                             urls
                         );
+                        // @ts-ignore
                         setBottomUrls(urls);
                     } else {
                         console.log(`urlNav entry for ${navPath} is undefined`);
@@ -128,8 +130,10 @@ const TertiaryPage: React.FC = () => {
                     {removeUnderscore(
                         chopOffDigitsAndUnderscore(
                             tertiary
-                                ? tertiary.toUpperCase()
-                                : subcategory.toUpperCase()
+                                ? // @ts-ignore
+                                  tertiary.toUpperCase()
+                                : // @ts-ignore
+                                  subcategory.toUpperCase()
                         )
                     )}
                 </h1>
@@ -139,6 +143,7 @@ const TertiaryPage: React.FC = () => {
             />
             <div className="bg-black pt-[200px]"></div>
             {bottomUrls && bottomUrls.length ? (
+                // @ts-ignore
                 <FooterLinks data={bottomUrls} />
             ) : null}
             <Footer />

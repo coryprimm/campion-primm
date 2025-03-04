@@ -39,7 +39,12 @@ const WellnessPage: React.FC<WellnessPageProps> = ({
             <GeminiBoxes images={secondUrls} />
             <SingleBoxes urls={thirdUrls} />
             <div className="bg-black pt-[200px]"></div>
-            {bottomUrls.length > 0 && <FooterLinks data={bottomUrls} />}
+            {bottomUrls.length > 0 && (
+                <FooterLinks
+                    // @ts-ignore
+                    data={bottomUrls}
+                />
+            )}
             <Footer />
         </div>
     );

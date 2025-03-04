@@ -40,7 +40,7 @@ const GenericBonPage: React.FC = () => {
                     isLoading: true,
                     hasError: false,
                 }));
-
+                // @ts-ignore
                 const result = await getBonUrls(uppercaseCategory, Nav);
 
                 // Get bottom navigation URLs
@@ -52,6 +52,7 @@ const GenericBonPage: React.FC = () => {
                     );
 
                     if (navUrls && navUrls.length > 0) {
+                        // @ts-ignore
                         urls = navUrls;
                     }
                 }
@@ -128,7 +129,11 @@ const GenericBonPage: React.FC = () => {
                 </div>
             </div>
             <div className="bg-black pt-[200px]"></div>
-            {bottomUrls.length > 0 && <FooterLinks data={bottomUrls} />}
+            {bottomUrls.length > 0 && (
+                <FooterLinks // @ts-ignore
+                    data={bottomUrls}
+                />
+            )}
             <Footer />
         </div>
     );

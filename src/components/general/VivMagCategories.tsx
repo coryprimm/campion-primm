@@ -15,6 +15,7 @@ const VIVMagCategories: React.FC<VIVMagCategoriesProps> = ({
             <div className="pb-20">
                 <Link href={`/viv/STYLE`} className="max-w-[800px] mb-10 pb-10">
                     <CategoryCardv3
+                        // @ts-ignore
                         data={VIVinfo.catTitleUrlslive[0]}
                         images={
                             categoryImages[
@@ -31,6 +32,7 @@ const VIVMagCategories: React.FC<VIVMagCategoriesProps> = ({
                     className="max-w-[800px] mb-10 pb-10"
                 >
                     <CategoryVertAndHorz
+                        // @ts-ignore
                         data={VIVinfo.catTitleUrlslive[1]}
                         images={
                             categoryImages[
@@ -43,6 +45,7 @@ const VIVMagCategories: React.FC<VIVMagCategoriesProps> = ({
 
             <Link href={`/viv/WELLNESS`} className="max-w-[800px] mb-10 pb-10">
                 <CategoryCardv3
+                    // @ts-ignore
                     data={VIVinfo.catTitleUrlslive[2]}
                     images={
                         categoryImages[

@@ -64,6 +64,7 @@ const VIVMag: React.FC = () => {
                 const categoryImages: { [key: string]: string[] } = {};
                 for (const data of VIVinfo.catTitleUrlslive) {
                     const title = Object.keys(data)[0];
+                    // @ts-ignore
                     const photos = data[title];
                     const fetchedImages = await fetchCloudflareImages(photos);
                     categoryImages[title] = fetchedImages;

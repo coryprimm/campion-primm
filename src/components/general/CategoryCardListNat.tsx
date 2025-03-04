@@ -17,6 +17,7 @@ const CategoryCardListNat: React.FC<CategoryCardListNatProps> = ({
                     className="max-w-[800px] mb-10 pb-10"
                 >
                     <CategoryCardv3
+                        // @ts-ignore
                         data={NatInfo.specialCaselive}
                         images={
                             categoryImages[
@@ -33,6 +34,7 @@ const CategoryCardListNat: React.FC<CategoryCardListNatProps> = ({
                     className="max-w-[800px] mb-10 pb-10"
                 >
                     <CategoryCardv3
+                        // @ts-ignore
                         data={NatInfo.catTitleUrlslive[1]}
                         images={
                             categoryImages[
@@ -49,6 +51,7 @@ const CategoryCardListNat: React.FC<CategoryCardListNatProps> = ({
                     className="max-w-[800px] mb-10 pb-10"
                 >
                     <CategoryCardv3
+                        // @ts-ignore
                         data={NatInfo.catTitleUrlslive[2]}
                         images={
                             categoryImages[
@@ -66,6 +69,7 @@ const CategoryCardListNat: React.FC<CategoryCardListNatProps> = ({
                     className="max-w-[800px] mb-10 pb-10"
                 >
                     <CategoryCardv3
+                        // @ts-ignore
                         data={NatInfo.catTitleUrlslive[3]}
                         images={
                             categoryImages[

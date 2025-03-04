@@ -1,4 +1,4 @@
-// export default Header;
+import React from 'react';
 import { Montserrat, Libre_Baskerville } from 'next/font/google';
 import Head from 'next/head';
 
@@ -8,7 +8,7 @@ const montserrat = Montserrat({
     display: 'block', // Forces the font to be displayed immediately
     preload: true,
     variable: '--font-montserrat',
-    weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
     fallback: ['system-ui', 'arial'], // Fallback fonts that closely match Montserrat
 });
 

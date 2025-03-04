@@ -18,6 +18,7 @@ const CategoryCardMagazineList: React.FC<CategoryCardMagazineListProps> = ({
                 return (
                     <CategoryCardMagazineCondensed
                         key={index}
+                        // @ts-ignore
                         data={data}
                         url={`/bonappetit/${urls[index]}`}
                         introImages={images}

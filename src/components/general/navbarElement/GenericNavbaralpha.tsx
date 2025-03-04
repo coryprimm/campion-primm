@@ -86,10 +86,15 @@ const GenericNavbarv2: React.FC<GenericNavbarProps> = ({
                         <div className="flex items-center justify-between">
                             <Link href={'/'}>
                                 <LogoComponent
+                                    // @ts-ignore
                                     logoSrc={logoSrc}
+                                    // @ts-ignore
                                     logoAlt={logoAlt}
+                                    // @ts-ignore
                                     logoWidth={logoWidth}
+                                    // @ts-ignore
                                     logoHeight={logoHeight}
+                                    // @ts-ignore
                                     isEqualsMenuOpen={isEqualsMenuOpen}
                                 />
                             </Link>

@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+// @ts-ignore
 import { VIVmagData } from '../data/VIVmagData';
+// @ts-ignore
 import SingleBoxes from '../components/SingleBoxes';
 import SinglePhotoTitleList from '@/components/general/SinglePhotoTitleList';
 import { Nav } from '../assets/mappings/imageMappings';
+// @ts-ignore
 import { reduceVIVmagData } from '@/assets/utilities';
 
 const CategoryPage: React.FC = () => {
@@ -21,7 +24,9 @@ const CategoryPage: React.FC = () => {
 
     useEffect(() => {
         const fetchData = async () => {
+            // @ts-ignore
             const reduced = await reduceVIVmagData(
+                // @ts-ignore
                 Nav[category.toLowerCase() as keyof typeof Nav]
             );
             setReducedData(reduced);

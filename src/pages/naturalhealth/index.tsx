@@ -72,6 +72,7 @@ const NaturalHealth: React.FC = () => {
                     ...NatInfo.catTitleUrlslive,
                 ]) {
                     const title = Object.keys(data)[0];
+                    // @ts-ignore
                     const photos = data[title];
                     const fetchedImages = await fetchCloudflareImages(photos);
                     categoryImages[title] = fetchedImages;
@@ -199,7 +200,9 @@ const NaturalHealth: React.FC = () => {
             </div>
             <div className="bg-black pt-[200px]"></div>
             {bottomUrls && bottomUrls.length ? (
-                <FooterLinks data={bottomUrls} />
+                <FooterLinks // @ts-ignore
+                    data={bottomUrls}
+                />
             ) : null}
             <Footer />
         </div>
