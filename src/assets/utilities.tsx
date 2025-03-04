@@ -6,15 +6,14 @@ import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 
 // @ts-ignore
 export async function fetchCloudflareImages(keys: string[]): Promise<string[]> {
-    console.log('want to try');
-    console.log(`$${process.env.ACCOUNT_ID} is my account`);
     try {
         const s3Client = new S3Client({
             region: 'auto',
-            endpoint: `https://${process.env.ACCOUNT_ID}.r2.cloudflarestorage.com`,
+            endpoint: `https://${process.env.NEXT_PUBLIC_ACCOUNT_ID}.r2.cloudflarestorage.com`,
             credentials: {
-                accessKeyId: process.env.R2_ACCESS_KEY_ID as string,
-                secretAccessKey: process.env.R2_SECRET_ACCESS_KEY as string,
+                accessKeyId: process.env.NEXT_PUBLIC_R2_ACCESS_KEY_ID as string,
+                secretAccessKey: process.env
+                    .NEXT_PUBLIC_R2_SECRET_ACCESS_KEY as string,
             },
         });
 
@@ -22,7 +21,7 @@ export async function fetchCloudflareImages(keys: string[]): Promise<string[]> {
         const results = await Promise.allSettled(
             keys.map(async (key) => {
                 const command = new GetObjectCommand({
-                    Bucket: process.env.R2_BUCKET_NAME,
+                    Bucket: process.env.NEXT_PUBLIC_R2_BUCKET_NAME,
                     Key: key,
                 });
 
@@ -205,17 +204,17 @@ async function fetchCloudflareImagesTitled(keys: string[]): Promise<string[]> {
         // @ts-ignore
         const s3Client = new S3Client({
             region: 'auto',
-            endpoint: `https://${process.env.ACCOUNT_ID}.r2.cloudflarestorage.com`,
+            endpoint: `https://${process.env.NEXT_PUBLIC_ACCOUNT_ID}.r2.cloudflarestorage.com`,
             credentials: {
-                accessKeyId: process.env.R2_ACCESS_KEY_ID,
-                secretAccessKey: process.env.R2_SECRET_ACCESS_KEY,
+                accessKeyId: process.env.NEXT_PUBLIC_R2_ACCESS_KEY_ID,
+                secretAccessKey: process.env.NEXT_PUBLIC_R2_SECRET_ACCESS_KEY,
             },
         });
 
         const results = await Promise.allSettled(
             keys.map(async (key) => {
                 const command = new GetObjectCommand({
-                    Bucket: process.env.R2_BUCKET_NAME,
+                    Bucket: process.env.NEXT_PUBLIC_R2_BUCKET_NAME,
                     Key: key,
                 });
 

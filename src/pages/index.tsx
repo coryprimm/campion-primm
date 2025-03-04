@@ -19,6 +19,9 @@ const Home: React.FC = () => {
         console.log(environment);
         console.log('was env');
         console.log(process.env.ACCOUNT_ID);
+        console.log('-----');
+        console.log(process.env);
+        console.log('was it something');
         console.log('hope that worked');
 
         const loadData = async () => {
