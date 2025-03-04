@@ -15,6 +15,11 @@ const Home: React.FC = () => {
     // Fetch all featured images when the component mounts
     useEffect(() => {
         let mounted = true;
+        const environment = process.env.VERCEL_ENV;
+        console.log(environment);
+        console.log('was env');
+        console.log(process.env.ACCOUNT_ID);
+        console.log('hope that worked');
 
         const loadData = async () => {
             try {
