@@ -1,6 +1,6 @@
 import React from 'react';
 import CategoryCardMagazineCondensed from './CategoryCardMagazineCondensed';
-import { BAinfo } from '../../assets/mappings/bonMappings';
+import { BAinfo } from '../../assets/mappings/bonmappings';
 
 interface CategoryCardMagazineListProps {
     categoryImages: { [key: string]: string[] };
