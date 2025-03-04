@@ -92,6 +92,7 @@ const Home: React.FC = () => {
                     <FeaturedContentList featuredImages={featuredImages} />
                 </div>
             </div>
+            <h1>|{process.env.R2_BUCKET_NAME}|</h1>
             <Footer />
         </div>
     );
