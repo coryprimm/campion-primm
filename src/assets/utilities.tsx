@@ -6,6 +6,8 @@ import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 
 // @ts-ignore
 export async function fetchCloudflareImages(keys: string[]): Promise<string[]> {
+    console.log('want to try');
+    console.log(`$${process.env.ACCOUNT_ID} is my account`);
     try {
         const s3Client = new S3Client({
             region: 'auto',
