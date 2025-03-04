@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BAinfo } from '../../assets/mappings/bonMappings';
+import { BAinfo } from '../../assets/mappings/bonmappings';
 import SingleBoxes from '@/components/general/SingleBoxes';
 import Header from '@/components/Header';
 import CategoryCardMagazineList from '@/components/general/CategoryCardMagazineList';
